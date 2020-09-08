@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"log"
 	"net/http"
 	"os"
 )
@@ -24,14 +25,14 @@ func hitURL(url string, channel chan<- result) {
 func main() {
 	// Check for valid input
 	if len(os.Args) != 2 {
-		panic("Error: Invalid input")
+		log.Fatalln("Error: Invalid input")
 	}
 
 	// Decode json array
 	urls := []string{}
 	err := json.Unmarshal([]byte(os.Args[1]), &urls)
 	if err != nil {
-		panic("Error: Decoding Json")
+		log.Fatalln("Error: Decoding Json")
 	}
 
 	// Process hitURL
@@ -49,7 +50,7 @@ func main() {
 	// Encode result
 	jsonResults, err := json.Marshal(results)
 	if err != nil {
-		panic("Error: Encoding Json")
+		log.Fatalln("Error: Encoding Json")
 	}
 	fmt.Println(string(jsonResults))
 }
