@@ -1,5 +1,4 @@
-# litCrawler
-# 크롤러는 활용해 재밌는 것을 만들어 보자!
+# litCrawler: 크롤러를 활용해 재밌는 것을 만들어 보자!
 <br></br>
 ## 1. URLChecker  
 #### Feature: 해당 url이 정상 접근 되는 지 확인  
